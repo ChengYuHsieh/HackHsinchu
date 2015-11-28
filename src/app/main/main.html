@@ -1,1 +1,183 @@
-<open-s-s></open-s-s>
+<header id="header" class="">
+  <img class="logo" src="assets/images/logo.png" width="300px" />
+  <navbar></navbar>  
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="search-content col-sm-4 col-sm-offset-2">
+        <open-s-s></open-s-s>
+        <!--<search></search>-->
+      </div>
+      <div class="search-content col-sm-4 hidden-xs">
+        <status></status>
+      </div>
+    </div>
+  </div>
+  <div class="background">
+    <img src="assets/images/house.jpg" width="100%"/>
+  </div>
+</header><!-- /header -->
+<div class="container">
+
+  <div class="row">
+    <div class="cate-block col-sm-12 cols-xs-12">
+      <img src="assets/images/cate.png" class="title-img" />
+      <h3 class="title-text" translate="SERVICE_TITLE">What can we help you ?</h3>
+
+      <ul class="cate-list">
+        <li>
+          <img src="assets/images/1.png" height="30px" />
+          <h4 translate="CATE1.name">Urban Planning</h4>
+          <small translate="CATE1.small"></a></small>
+        </li>
+        <li>
+          <img src="assets/images/2.png" height="30px" />
+          <h4 translate="CATE2.name"></h4>
+          <small translate="CATE2.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/3.png" height="30px" />
+          <h4 translate="CATE3.name"></h4>
+          <small translate="CATE3.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/4.png" height="30px" />
+          <h4 translate="CATE4.name"></h4>
+          <small translate="CATE4.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/5.png" height="30px" />
+          <h4 translate="CATE5.name"></h4>
+          <small translate="CATE5.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/6.png" height="30px" />
+          <h4 translate="CATE6.name"></h4>
+          <small translate="CATE6.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/7.png" height="30px" />
+          <h4 translate="CATE7.name"></h4>
+          <small translate="CATE7.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/8.png" height="30px" />
+          <h4 translate="CATE8.name"></h4>
+          <small translate="CATE8.small"></small>
+        </li>
+        <li>
+          <img src="assets/images/9.png" height="30px" />
+          <h4 translate="CATE9.name"></h4>
+          <small translate="CATE9.small"></small>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="gov-news col-sm-6 col-xs-12">
+      <img src="assets/images/news.png" class="title-img"/>
+      <h3 class="title-text" translate="NEWS">News</h3>
+      <div class="carousel-block content" ng-controller="carouselController as vm">
+        <carousel interval="200000" no-wrap="false">
+          <slide ng-repeat="slide in vm.slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p>{{ slide.text }}</p>
+            </div>
+          </slide>
+        </carousel>
+      </div>
+    </div>
+    <div class="activity-news col-sm-6 col-xs-12" ng-controller="activityController as vm">
+      <img src="assets/images/event.png" class="title-img"/>
+      <h3 class="title-text" translate="ACTIVITY_NEWS">News</h3>
+      <ul ng-repeat="activity in vm.activities" class="content">
+        <li>
+          <img src="{{ activity.image }}" class="pull-left"/> 
+          <div class="detail pull-left">
+            <h5>{{ activity.name }}</h5>
+            <small>{{ activity.date }}</small>
+          </div>
+          <span class="label label-info pull-right">Info</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="gov-news col-sm-6 col-xs-12">
+      <img src="assets/images/news.png" class="title-img"/>
+      <h3 class="title-text" translate="MAYOR">mayor</h3>
+      <div class="content">
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="assets/images/mayortalk.png" width="100%" />
+          </div>
+          <div class="col-xs-8">
+            <h4><b>新竹市民絕對值得擁有優質藝文活動</b></h4>
+            <p>
+              「一座城市的偉大不僅在於硬體建設，更在於軟體的生活品質。」新竹市家戶所得全國最高，創稅能力更在全國名列前茅，這座城市不僅要有好的硬體建設，我們的市民，更值得擁有優質的藝文活動。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="activity-news col-sm-6 col-xs-12" ng-controller="discussController as vm">
+      <img src="assets/images/event.png" class="title-img"/>
+      <h3 class="title-text" translate="DISCUSS">Discuss</h3>
+      <ul ng-repeat="activity in vm.activities" class="content">
+        <li>
+          <div class="detail pull-left">
+            <h5>{{ activity.name }}</h5>
+            <small>{{ activity.detail }}</small>
+          </div>
+          <span class="label pull-right" ng-class="(activity.solve)?'label-info':'label-danger'">{{ (activity.solve)?'已解決':'待解決' }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row info">
+        <div class="col-xs-6">
+          <img src="assets/images/footer.png" width="45px" />
+          <p>30051 新竹市中正路120號</p>
+          <p>總機： 03-5216121</p>
+          <p>服務時間：週一至週五8至12點，13至17點</p>
+          <p> 1999服務專線(24小時服務 全年無休)</p>
+        </div>
+        <div class="col-xs-6">
+          <ul class="footer-link">
+            <li><a href="#" translate="FOOTER.aboutus"></a></li>
+            <li><a href="#" translate="FOOTER.jobs"></a></li>
+            <li><a href="#" translate="FOOTER.sitemap"></a></li>
+            <li><a href="#" translate="FOOTER.agency"></a></li>
+            <li><a href="#" translate="FOOTER.onenine"></a></li>
+            <li><a href="#" translate="FOOTER.data"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 subscribe">
+      <img src="assets/images/mail.png" width="45px" class="title-img"/>
+      <h3 class="title-text" translate="SUBSCRIBE"></h3>
+      <form>
+        <input type="text" class="form-control keyword" placeholder="{{ 'SUBSCRIBE.keyword' | translate }}">
+        <div class="input-group">
+          <input type="text" class="form-control mail" placeholder="{{ 'SUBSCRIBE.mail' | translate }}">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" translate="SUBSCRIBE.send_btn">send</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </div>
+  </div>
+
+  <div class="background">
+    <img src="assets/images/house.jpg" width="100%"/>
+  </div>
+</footer>
