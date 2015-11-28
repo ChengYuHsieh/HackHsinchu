@@ -1,0 +1,14 @@
+.nav {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.nav li {
+	display: inline-block;
+	float: none;
+	margin: 0 10px;
+
+	a {
+		color: $blue;
+	}
+}
