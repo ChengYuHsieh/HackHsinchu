@@ -3,9 +3,6 @@
   <div ng-repeat="cmd in openSS.actionFiltered = (openSS.cmds | filter:openSS.action)" >
     <div class="openSS-hint" ng-click="openSS.setAction(cmd)" id="{{$index}}">
         {{cmd}}
-        <!--<span class="openSS-cmt" ng-if="openSS.cmdHint.hasOwnProperty(openSS.action) && openSS.input.split(' ').length<=1" ng-repeat="arg in openSS.cmdHint[openSS.action]">-->
-          <!--{{arg}}-->
-        <!--</span>-->
       </div>
   </div>
 </div>
@@ -27,5 +24,3 @@
       </div>
 </div>
 
-{{openSS.actionID}}
-{{openSS.argID}}

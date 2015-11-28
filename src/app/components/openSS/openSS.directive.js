@@ -44,14 +44,17 @@
       ':call': ['agency / number']
     };
     vm.cmds = [
-      ':help',
-      ':call'
+      ':call',
+      ':go',
+      ':hack',
+      ':mayor'
     ];
     vm.agencies = [
       { name: 'labor', number: '035324900'},
       { name: 'mayor', number: '0988363636'},
       { name: 'laker', number: '0988373737'},
-      { name: '1999', number: '1999'}
+      { name: '1999', number: '1999'},
+      { name: '勞工局', number: '0101'}
     ]
     vm.setAction = function(cmd){
       vm.input = cmd;
