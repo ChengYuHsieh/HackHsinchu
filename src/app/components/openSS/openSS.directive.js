@@ -27,6 +27,7 @@
     vm.input = ''; 
     vm.curInput = '';
     vm.action = '';
+    vm.show = true;
 
     vm.hintChg = function(){
       var inputLen = vm.input.length;
@@ -56,6 +57,7 @@
     }
     vm.setArgs = function(action, agy){
       vm.input = action + ' ' + agy;
+      vm.show = false;
     }
     vm.actionID = -1;
     vm.onArrowDown = function($event){
@@ -71,7 +73,13 @@
         $("#"+vm.actionID.toString()).addClass('active');
         $("#"+pre.toString()).removeClass('active');
       }else if(code === 13){
-        vm.setAction(vm.cmds[vm.actionID]);
+        if(vm.input.split(' ').length<=1){
+          vm.setAction(vm.cmds[vm.actionID]);
+        }else{
+          vm.setArgs(vm.action, vm.agencies[vm.actionID].name);
+        }
+        $("#"+vm.actionID.toString()).removeClass('active');
+        vm.actionID = -1;
       }
     }
 
