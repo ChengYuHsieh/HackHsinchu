@@ -49,6 +49,8 @@
     ];
     vm.agencies = [
       { name: 'labor', number: '035324900'},
+      { name: 'mayor', number: '0988363636'},
+      { name: 'laker', number: '0988373737'},
       { name: '1999', number: '1999'}
     ]
     vm.setAction = function(cmd){
@@ -61,66 +63,47 @@
     }
     vm.actionID = -1;
     vm.argID = -1;
+    vm.actionFiltered = [];
+    vm.argFiltered = [];
     vm.onArrowDown = function($event){
       var code = $event.which || $event.keyCode;
-
-      if(vm.input.split(' ').length<=1){
+      if(vm.cmdHint.hasOwnProperty(vm.action) && vm.input.split(' ').length<=1){
+        
+      }else if(vm.input.split(' ').length<=1){
         if(code === 40){
-          vm.actionID = mod(vm.actionID+1,vm.cmds.length);
-          var pre = mod(vm.actionID-1,vm.cmds.length);
+          vm.actionID = mod(vm.actionID+1,vm.actionFiltered.length);
+          var pre = mod(vm.actionID-1,vm.actionFiltered.length);
           $("#"+pre.toString()).removeClass('active');
           $("#"+vm.actionID.toString()).addClass('active');
         }else if(code === 38){
-          vm.actionID = mod(vm.actionID-1, vm.cmds.length);
-          var pre = mod(vm.actionID-1, vm.cmds.length);
+          vm.actionID = mod(vm.actionID-1, vm.actionFiltered.length);
+          var pre = mod(vm.actionID-1, vm.actionFiltered.length);
           $("#"+vm.actionID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
         }else if(code === 13){
-          vm.setAction(vm.cmds[vm.actionID]);
+          vm.setAction(vm.actionFiltered[vm.actionID]);
           $("#"+vm.actionID.toString()).removeClass('active');
           vm.actionID = -1;
         }
 
       }else{
         if(code === 40){
-          vm.argID = mod(vm.argID+1,vm.agencies.length);
-          var pre = mod(vm.argID-1,vm.agencies.length);
+          vm.argID = mod(vm.argID+1,vm.argFiltered.length);
+          var pre = mod(vm.argID-1,vm.argFiltered.length);
           $("#"+pre.toString()).removeClass('active');
           $("#"+vm.argID.toString()).addClass('active');
         }else if(code === 38){
-          vm.argID = mod(vm.argID-1, vm.agencies.length);
-          var pre = mod(vm.argID-1, vm.agencies.length);
+          vm.argID = mod(vm.argID-1, vm.argFiltered.length);
+          var pre = mod(vm.argID-1, vm.argFiltered.length);
           $("#"+vm.argID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
         }else if(code === 13){
-          vm.setArgs(vm.action, vm.agencies[vm.argID].name);
+          vm.setArgs(vm.action, vm.argFiltered[vm.argID].name);
           $("#"+vm.argID.toString()).removeClass('active');
           vm.argID = -1;
         }
 
       }
-
-
-
-      //if(code === 40){
-        //vm.actionID = mod(vm.actionID+1,vm.cmds.length);
-        //var pre = mod(vm.actionID-1,vm.cmds.length);
-        //$("#"+pre.toString()).removeClass('active');
-        //$("#"+vm.actionID.toString()).addClass('active');
-      //}else if(code === 38){
-        //vm.actionID = mod(vm.actionID-1, vm.cmds.length);
-        //var pre = mod(vm.actionID-1, vm.cmds.length);
-        //$("#"+vm.actionID.toString()).addClass('active');
-        //$("#"+pre.toString()).removeClass('active');
-      //}else if(code === 13){
-        //if(vm.input.split(' ').length<=1){
-          //vm.setAction(vm.cmds[vm.actionID]);
-        //}else{
-          //vm.setArgs(vm.action, vm.agencies[vm.actionID].name);
-        //}
-        //$("#"+vm.actionID.toString()).removeClass('active');
-        //vm.actionID = -1;
-      //}
     }
 
 
