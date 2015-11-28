@@ -1,23 +1,20 @@
-<input type="text" ng-model="openSS.input" ng-change="openSS.hintChg()">
+<input type="text" ng-model="openSS.input" ng-change="openSS.hintChg()" ng-keydown="openSS.onArrowDown($event)">
 <div ng-if="openSS.input[0]==':' && openSS.input.split(' ').length<=1">
   <div ng-repeat="cmd in openSS.cmds | filter:openSS.action">
-      <div ng-click="openSS.setAction(cmd)">
+    <div class="openSS-hint" ng-click="openSS.setAction(cmd)" id="{{$index}}">
         {{cmd}}
+        <span ng-if="openSS.cmdHint.hasOwnProperty(openSS.action) && openSS.input.split(' ').length<=1" ng-repeat="arg in openSS.cmdHint[openSS.action]">
+          {{arg}}
+        </span>
       </div>
-      <span ng-if="openSS.cmdHint.hasOwnProperty(openSS.action) && openSS.input.split(' ').length<=1" ng-repeat="arg in openSS.cmdHint[openSS.action]">
-        {{arg}}
-      </span>
   </div>
 </div>
 
 <div ng-if="openSS.cmdHint.hasOwnProperty(openSS.action)">
       <div ng-repeat="agy in openSS.agencies | filter:openSS.curInput">
-        <div ng-click="openSS.setArgs(openSS.action,agy.name)">
+        <div class="openSS-hint openSS-args" ng-click="openSS.setArgs(openSS.action,agy.name)" id="{{$index}}">
           {{openSS.action}} {{agy.name}}
         </div>
       </div>
 </div>
-{{openSS.input}}
-  <!--{{openSS.curInput}}-->
-  <!--{{openSS.config}}-->
-  <!--{{openSS.action}}-->
+

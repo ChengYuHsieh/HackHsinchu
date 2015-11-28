@@ -16,6 +16,10 @@
 
     return directive;
   }
+  
+  function mod(n, m) {
+        return ((n % m) + m) % m;
+  }   
 
   function openSS(){
     var vm = this;
@@ -44,7 +48,6 @@
     ];
     vm.agencies = [
       { name: 'labor', number: '035324900'},
-      { name: 'labby', number: '035324901'},
       { name: '1999', number: '1999'}
     ]
     vm.setAction = function(cmd){
@@ -54,6 +57,25 @@
     vm.setArgs = function(action, agy){
       vm.input = action + ' ' + agy;
     }
+    vm.actionID = -1;
+    vm.onArrowDown = function($event){
+      var code = $event.which || $event.keyCode;
+      if(code === 40){
+        vm.actionID = mod(vm.actionID+1,vm.cmds.length);
+        var pre = mod(vm.actionID-1,vm.cmds.length);
+        $("#"+pre.toString()).removeClass('active');
+        $("#"+vm.actionID.toString()).addClass('active');
+      }else if(code === 38){
+        vm.actionID = mod(vm.actionID-1, vm.cmds.length);
+        var pre = mod(vm.actionID-1, vm.cmds.length);
+        $("#"+vm.actionID.toString()).addClass('active');
+        $("#"+pre.toString()).removeClass('active');
+      }else if(code === 13){
+        vm.setAction(vm.cmds[vm.actionID]);
+      }
+    }
+
+
   }
 
 })();
