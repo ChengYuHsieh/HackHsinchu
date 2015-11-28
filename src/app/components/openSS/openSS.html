@@ -1,0 +1,23 @@
+<input type="text" ng-model="openSS.input" ng-change="openSS.hintChg()">
+<div ng-if="openSS.input[0]==':' && openSS.input.split(' ').length<=1">
+  <div ng-repeat="cmd in openSS.cmds | filter:openSS.action">
+      <div ng-click="openSS.setAction(cmd)">
+        {{cmd}}
+      </div>
+      <span ng-if="openSS.cmdHint.hasOwnProperty(openSS.action) && openSS.input.split(' ').length<=1" ng-repeat="arg in openSS.cmdHint[openSS.action]">
+        {{arg}}
+      </span>
+  </div>
+</div>
+
+<div ng-if="openSS.cmdHint.hasOwnProperty(openSS.action)">
+      <div ng-repeat="agy in openSS.agencies | filter:openSS.curInput">
+        <div ng-click="openSS.setArgs(openSS.action,agy.name)">
+          {{openSS.action}} {{agy.name}}
+        </div>
+      </div>
+</div>
+{{openSS.input}}
+  <!--{{openSS.curInput}}-->
+  <!--{{openSS.config}}-->
+  <!--{{openSS.action}}-->
