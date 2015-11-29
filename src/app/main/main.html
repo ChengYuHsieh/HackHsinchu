@@ -15,11 +15,13 @@
         </div>
         <!--<search></search>-->
       </div>
-      <div class="search-content col-sm-4 hidden-xs">
+      <div class="search-content col-sm-4">
         <status></status>
       </div>
     </div>
   </div>
+</header>
+  <!--
   <div class="background">
     <img src="assets/images/background.png" width="100%"/>
   </div>
@@ -100,7 +102,7 @@
       <h3 class="title-text" translate="ACTIVITY_NEWS">News</h3>
       <ul ng-repeat="activity in vm.activities" class="content">
         <li>
-          <img ngSrc="{{ activity.image }}" class="pull-left"/> 
+          <img ng-src="{{ activity.image }}" class="pull-left"/> 
           <div class="detail pull-left">
             <h5>{{ activity.name }}</h5>
             <small>{{ activity.date }}</small>

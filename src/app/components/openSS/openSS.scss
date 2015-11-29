@@ -8,7 +8,13 @@
 	}
 }
 
-.hint-block > div:last-child {
+.hint-box {
+	position: absolute;
+	left: 16px;
+  right: 107px;
+}
+
+.hint-box > div:last-child {
 	border-radius: 0 0 4px 4px;
 }
 
