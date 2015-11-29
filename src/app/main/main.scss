@@ -157,7 +157,7 @@ header {
 	li {
 		display: block;
 		background: #FFF;
-		height: 70px;
+		height: auto;
 		padding: 10px;
 
 		&:hover {
@@ -172,7 +172,6 @@ header {
 
 	.detail {
 		margin-left: 15px;
-		width: 150px;
 
 		small {
 			color: #888;

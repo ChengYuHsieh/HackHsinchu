@@ -106,14 +106,13 @@
       <h3 class="title-text" translate="ACTIVITY_NEWS">News</h3>
       <ul ng-repeat="activity in vm.activities" class="content">
         <li>
-          <img ng-src="{{ activity.image }}" class="pull-left"/> 
+          <img ng-src="{{ activity.image }}" class="pull-left hidden-xs"/> 
           <div class="detail pull-left">
             <h5>{{ activity.name }}</h5>
             <small>{{ activity.date }}</small>
           </div>
-          <div class="clearfix"></div>
           <span class="label label-info pull-right">Info</span>
-
+          <div class="clearfix"></div>
         </li>
       </ul>
     </div>
@@ -147,6 +146,7 @@
             <small>{{ activity.detail }}</small>
           </div>
           <span class="label pull-right" ng-class="(activity.solve)?'label-info':'label-danger'">{{ (activity.solve)?'已解決':'待解決' }}</span>
+          <div class="clearfix"></div>
         </li>
       </ul>
     </div>
