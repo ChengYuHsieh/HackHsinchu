@@ -37,6 +37,16 @@
         welfare: 'Subsidy',
         legal: 'Paper Loss'
       },
+      STATUS: {
+        date: 'Today, Nov 28, 2015',
+        loc: 'Northern Hsinchu City',
+        w1: 'Sunny, Eighteen degree',
+        w2: 'Rainfall probability 13%',
+        r1: 'Rd. Chung-shan',
+        r2: 'Rd. Dong-da',
+        r3: 'Rd. Ching-chu',
+        r4: 'Rd. Guang-hua'
+      },
       CATE1: {
         name: 'Urban Development',
         small: 'Public Housing, Youth Loans'
@@ -103,6 +113,16 @@
         button: '搜尋',
         hint: '你想知道什麼與新竹市相關的資訊呢？'
       },
+      STATUS: {
+        date: '今天 中華民國 104 年 11 月 28 日', 
+        loc: '新竹市北區',
+        w1: '今天天氣晴朗, 目前氣溫18度',
+        w2: '有霧, 易過敏者出門建議攜帶口罩',
+        r1: '中山路(中正路至西大路)',
+        r2: '東大路三段(天府路至延平路)',
+        r3: '金竹路(鐵道路二段110巷至武陵路)',
+        r4: '光華街(經國路至湳雅街)'
+      },
       SERVICE_TITLE: '你需要哪方面的服務或協助呢？',
       HOTTOPIC: {
         title: '熱門關鍵字',
@@ -113,7 +133,7 @@
       },
       CATE1: {
         name: '都市發展服務',
-        small: '綜合規劃、眷村更新'
+        small: '綜合規劃、更新'
       },
       CATE2: {
         name: '環境保護服務',
@@ -121,7 +141,7 @@
       },
       CATE3: {
         name: '社會福利服務',
-        small: '低收入戶、身心障礙'
+        small: '低收戶、身心障礙'
       },
       CATE4: {
         name: '教育服務',
@@ -133,7 +153,7 @@
       },
       CATE6: {
         name: '民政服務',
-        small: '客家服務、徵兵業務'
+        small: '客家服務、徵兵'
       },
       CATE7: {
         name: '地政服務',
@@ -141,11 +161,11 @@
       },
       CATE8: {
         name: '警政服務',
-        small: '違規拖吊、證件遺失'
+        small: '違規拖吊、遺失'
       },
       CATE9: {
         name: '勞工服務',
-        small: '職業安全、就業服務'
+        small: '就業安全服務'
       },
       NEWS: '市府新聞',
       ACTIVITY_NEWS: '活動資訊',
@@ -166,7 +186,7 @@
         send_btn: '送出'
       } 
     });
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('zh');
   }
 
 })();

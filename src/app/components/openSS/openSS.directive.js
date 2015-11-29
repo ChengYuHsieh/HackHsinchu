@@ -29,6 +29,7 @@
     vm.action = '';
     vm.show = true;
     vm.config=[];
+    vm.search = 'Search';
 
     vm.hintChg = function(){
       var inputLen = vm.input.length;
@@ -38,6 +39,11 @@
       vm.config = vm.input.split(' ').filter(function(substr){
         return substr !== '';
       });
+      if(vm.action===':call'){
+        vm.search = 'Call';
+      }else{
+        vm.search = 'Search';
+      }
     }
   
     vm.cmdHint = {
@@ -76,6 +82,9 @@
     vm.setAction = function(cmd){
       vm.input = cmd;
       vm.action = cmd;
+      if(cmd===':call'){
+        vm.search = 'Call';
+      }
     }
     vm.setArgs = function(action, agy){
       vm.input = action + ' ' + agy;
@@ -90,13 +99,14 @@
           var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
           var phone = result[0].number;
           var href = "tel:"+phone.toString();
-          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button' id='openSS-call'>Call</a>")
-          $('#openSS-call').click(function(){
+
+          //$('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button' id='openSS-call'>{{openSS.action}}</a>")
+          $('#openSS-btn').click(function(){
            vm.input='';
            vm.action='';
-           $('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>");
-
+           //$('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>");
           });
+          $('#openSS-btn').attr('href', href);
         }
     }
     vm.actionID = -1;

@@ -2,6 +2,7 @@
   "name": "hackHsinchu",
   "version": "0.0.0",
   "dependencies": {
+    "cfenv": "^1.0.3",
     "express": "^4.13.3"
   },
   "scripts": {
