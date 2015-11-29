@@ -98,7 +98,7 @@
           $("#"+vm.actionID.toString()).addClass('active');
         }else if(code === 38){
           vm.actionID = mod(vm.actionID-1, vm.actionFiltered.length);
-          var pre = mod(vm.actionID-1, vm.actionFiltered.length);
+          var pre = mod(vm.actionID+1, vm.actionFiltered.length);
           $("#"+vm.actionID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
         }else if(code === 13){
@@ -114,7 +114,7 @@
           $("#"+pre.toString()).removeClass('active');
           $("#"+vm.argID.toString()).addClass('active');
         }else if(code === 38){
-          vm.argID = mod(vm.argID-1, vm.argFiltered.length);
+          vm.argID = mod(vm.argID+1, vm.argFiltered.length);
           var pre = mod(vm.argID-1, vm.argFiltered.length);
           $("#"+vm.argID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
