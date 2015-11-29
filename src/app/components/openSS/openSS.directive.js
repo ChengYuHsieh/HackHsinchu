@@ -104,6 +104,7 @@
           $('#openSS-btn').click(function(){
            vm.input='';
            vm.action='';
+           vm.search='Search';
            //$('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>");
           });
           $('#openSS-btn').attr('href', href);
