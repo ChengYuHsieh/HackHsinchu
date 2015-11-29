@@ -22,7 +22,7 @@
   </div>
 
 
-  <div class="hint-box" ng-if="openSS.cmdHint.hasOwnProperty(openSS.action)" ng-show="openSS.show" ng-init="openSS.show=true">
+  <div class="hint-box" ng-if="openSS.action!==':hi' && openSS.cmdHint.hasOwnProperty(openSS.action)" ng-show="openSS.show" ng-init="openSS.show=true">
     <div ng-repeat="agy in openSS.argFiltered = (openSS.agencies | filter:openSS.curInput)">
       <div class="openSS-hint openSS-args" ng-click="openSS.setArgs(openSS.action,agy.name)" id="{{$index}}">
         {{openSS.action}} {{agy.name}}

@@ -41,9 +41,9 @@
     }
   
     vm.cmdHint = {
-      ':help': ['hello'],
       ':call': ['agency / number'],
-      ':go': ['agency']
+      ':go': ['agency'],
+      ':hi': ['mayor?']
     };
     vm.cmds = [
       ':call',
@@ -131,15 +131,16 @@
           $("#"+pre.toString()).removeClass('active');
           $("#"+vm.argID.toString()).addClass('active');
         }else if(code === 38){
-          vm.argID = mod(vm.argID+1, vm.argFiltered.length);
-          var pre = mod(vm.argID-1, vm.argFiltered.length);
+          vm.argID = mod(vm.argID-1, vm.argFiltered.length);
+          var pre = mod(vm.argID+1, vm.argFiltered.length);
           $("#"+vm.argID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
-        }else if(code === 13){
+        }else if(code === 13 && vm.action!==':hi'){
           vm.setArgs(vm.action, vm.argFiltered[vm.argID].name);
           $("#"+vm.argID.toString()).removeClass('active');
           vm.argID = -1;
         }
+
       }
       if(vm.config.length === 2 && code === 13){
         if(vm.config[0]===':go'){
@@ -155,6 +156,8 @@
            $('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>")
           });
           vm.input = '';
+        }else if(vm.config[0]===':hi'){
+          // easter egg
         }
 
       }
