@@ -1,8 +1,11 @@
 {
   "name": "hackHsinchu",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3"
+  },
   "scripts": {
+    "start": "node bluemix.js",
     "test": "gulp test"
   },
   "devDependencies": {
