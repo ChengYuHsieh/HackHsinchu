@@ -87,7 +87,7 @@
       <img src="assets/images/news.png" class="title-img"/>
       <h3 class="title-text" translate="NEWS">News</h3>
       <div class="carousel-block content" ng-controller="carouselController as vm">
-        <carousel interval="200000" no-wrap="false">
+        <carousel interval="3500" no-wrap="false">
           <slide ng-repeat="slide in vm.slides" active="slide.active">
             <img ng-src="{{slide.image}}" style="margin:auto;">
             <div class="carousel-caption">
@@ -187,6 +187,6 @@
   </div>
 
   <div class="background">
-    <img src="assets/images/house.jpg" width="100%"/>
+    <img src="assets/images/house.jpg" class="hidden-xs" width="100%"/>
   </div>
 </footer>
