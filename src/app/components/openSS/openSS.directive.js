@@ -127,7 +127,13 @@
       if(vm.config.length === 2 && code === 13){
         if(vm.config[0]===':go'){
           var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
-          window.location = result[0].url;
+          window.open(result[0].url, '_blank');
+          vm.input = '';
+        }else if(vm.config[0]===':call'){
+          var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
+          var phone = result[0].number;
+          var href = "tel:"+phone.toString();
+          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button'>Call</a>")
         }
 
       }
