@@ -28,6 +28,7 @@
     vm.curInput = '';
     vm.action = '';
     vm.show = true;
+    vm.config=[];
 
     vm.hintChg = function(){
       var inputLen = vm.input.length;
