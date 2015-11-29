@@ -53,3 +53,48 @@
 		border-color: $blue;
   }
 }
+
+.egg {
+	position: absolute;
+	z-index: 80000;
+	top: -80px;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	height: 350px;
+	display: none;
+	-webkit-animation: move 3s infinite linear;
+
+	.head {
+		width: 180px;
+		position: absolute;
+		left: 0;
+		z-index: 2;
+		transform-origin: center bottom;
+		-webkit-animation: spin 1s infinite linear;
+	}
+
+	.body {
+		width: 80px;
+		position: absolute;
+		bottom: 5px;
+		left: 40px;
+		transform-origin: center top;
+		-webkit-animation: spin 1s infinite linear;
+	}
+}
+
+@-webkit-keyframes spin {
+    0%   { transform: rotate(-10deg) }
+    50% { transform: rotate(10deg) }
+    100%   { transform: rotate(-10deg) }
+}
+
+@-webkit-keyframes move {
+    0%   { transform: translate3d(0px, 0px, 0px); }
+    50% { transform: translate3d(100px, 0px, 0px); }
+    100%   { transform: translate3d(0px, 0px, 0px); }
+}
+
+
+

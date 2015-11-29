@@ -6,8 +6,11 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
+  function MainController($scope, $translate) {
     var vm = this;
 
+	  $scope.changeLanguage = function (key) {
+	    $translate.use(key);
+	  };
   }
 })();
