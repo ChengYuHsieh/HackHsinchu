@@ -41,7 +41,8 @@
   
     vm.cmdHint = {
       ':help': ['hello'],
-      ':call': ['agency / number']
+      ':call': ['agency / number'],
+      ':go': ['agency']
     };
     vm.cmds = [
       ':call',
@@ -50,11 +51,27 @@
       ':mayor'
     ];
     vm.agencies = [
-      { name: 'labor', number: '035324900'},
-      { name: 'mayor', number: '0988363636'},
-      { name: 'laker', number: '0988373737'},
-      { name: '1999', number: '1999'},
-      { name: '勞工局', number: '0101'}
+      { name: '民政處', number: '477', url: 'http://dep-civil.hccg.gov.tw/'},
+      { name: '財政處', number: '244', url: 'http://dep-finance.hccg.gov.tw/'},
+      { name: '產業發展處', number: '246', url: 'http://dep-construction.hccg.gov.tw/'},
+      { name: '教育處', number: '267', url: 'http://www.hc.edu.tw/'},
+      { name: '工務處', number: '281', url: 'http://dep-publicwork.hccg.gov.tw/'},
+      { name: '交通處', number: '436', url: 'http://dep-traffic.hccg.gov.tw/'},
+      { name: '都市發展處', number: '431', url: 'http://urban.hccg.gov.tw/Internet/main/index.aspx'},
+      { name: '社會處', number: 'tel:035352386', url: 'http://society.hccg.gov.tw/'},
+      { name: '地政處', number: '320', url: 'http://land.hccg.gov.tw/'},
+      { name: '勞工處', number: 'tel:035324900', url: 'http://dep-labor.hccg.gov.tw/'},
+      { name: '城市行銷處', number: '539', url: 'http://dep-tourism.hccg.gov.tw/'},
+      { name: '行政處', number: '379', url: 'http://dep-administration.hccg.gov.tw/'},
+      { name: '人事處', number: '376', url: 'http://dep-personnel.hccg.gov.tw/'},
+      { name: '主計處', number: '413', url: 'http://dep-auditing.hccg.gov.tw/'},
+      { name: '政風處', number: '348', url: 'http://dep-ethics.hccg.gov.tw/'},
+      { name: '警察局', number: 'tel:035224168', url: 'http://www.hccp.gov.tw/hccp/index.asp'},
+      { name: '衛生局', number: 'tel:035355191', url: 'http://dep.hcchb.gov.tw/'},
+      { name: '稅務局', number: 'tel:', url: 'http://www.hcct.gov.tw/'},
+      { name: '環保局', number: '', url: 'http://www.hccepb.gov.tw/'},
+      { name: '消防局', number: 'tel:035278949', url: 'http://www.hcfd.gov.tw/'},
+      { name: '文化局', number: '', url: 'http://www.hcccb.gov.tw/'},
     ]
     vm.setAction = function(cmd){
       vm.input = cmd;
@@ -62,6 +79,7 @@
     }
     vm.setArgs = function(action, agy){
       vm.input = action + ' ' + agy;
+      vm.config = [action, agy];
       vm.show = false;
     }
     vm.actionID = -1;
@@ -104,6 +122,12 @@
           vm.setArgs(vm.action, vm.argFiltered[vm.argID].name);
           $("#"+vm.argID.toString()).removeClass('active');
           vm.argID = -1;
+        }
+      }
+      if(vm.config.length === 2 && code === 13){
+        if(vm.config[0]===':go'){
+          var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
+          window.location = result[0].url;
         }
 
       }
