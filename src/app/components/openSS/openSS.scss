@@ -57,10 +57,13 @@
 .egg {
 	position: absolute;
 	z-index: 80000;
+	top: -80px;
 	bottom: 0;
 	left: 0;
 	width: 300px;
 	height: 350px;
+	display: none;
+	-webkit-animation: move 3s infinite linear;
 
 	.head {
 		width: 180px;
@@ -85,6 +88,12 @@
     0%   { transform: rotate(-10deg) }
     50% { transform: rotate(10deg) }
     100%   { transform: rotate(-10deg) }
+}
+
+@-webkit-keyframes move {
+    0%   { transform: translate3d(0px, 0px, 0px); }
+    50% { transform: translate3d(100px, 0px, 0px); }
+    100%   { transform: translate3d(0px, 0px, 0px); }
 }
 
 

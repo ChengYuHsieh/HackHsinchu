@@ -158,6 +158,12 @@
           vm.input = '';
         }else if(vm.config[0]===':hi'){
           // easter egg
+          $('.egg').fadeIn(1500);
+
+          setTimeout(function(){
+            $('.egg').fadeOut(1000);  
+          }, 8000);
+          
         }
 
       }
