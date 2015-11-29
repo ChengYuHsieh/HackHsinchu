@@ -47,8 +47,7 @@
     vm.cmds = [
       ':call',
       ':go',
-      ':hack',
-      ':mayor'
+      ':hi',
     ];
     vm.agencies = [
       { name: '民政處', number: '477', url: 'http://dep-civil.hccg.gov.tw/'},
@@ -81,6 +80,23 @@
       vm.input = action + ' ' + agy;
       vm.config = [action, agy];
       vm.show = false;
+      if(vm.config[0]===':go'){
+          var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
+          window.open(result[0].url, '_blank');
+          vm.input = '';
+          vm.action = '';
+        }else if(vm.config[0]===':call'){
+          var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
+          var phone = result[0].number;
+          var href = "tel:"+phone.toString();
+          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button' id='openSS-call'>Call</a>")
+          $('#openSS-call').click(function(){
+           vm.input='';
+           vm.action='';
+           $('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>");
+
+          });
+        }
     }
     vm.actionID = -1;
     vm.argID = -1;
@@ -133,7 +149,11 @@
           var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
           var phone = result[0].number;
           var href = "tel:"+phone.toString();
-          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button'>Call</a>")
+          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button' id='openSS-call'>Call</a>")
+          $('#openSS-call').click(function(){
+           $('#openSS-call').replaceWith("<button class='btn btn-default' type='button' translate='SEARCH.button' id='openSS-btn'>Search</button>")
+          });
+          vm.input = '';
         }
 
       }
