@@ -10,7 +10,7 @@ header {
 	background: url('../../assets/images/background.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 50% 40%;
 }
 
 .translate {
@@ -46,6 +46,8 @@ header {
 .hottopic {
 	margin: 15px 5px 50px 5px;
 	text-align: left;
+  height: 20px;
+  overflow: hidden;
 }
 
 .cate-block, .gov-news, .activity-news {
@@ -63,10 +65,10 @@ header {
 		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 		float: left;
 		display: inline-block;
-		margin: 5px 6px;
+		margin: 5px 3px;
 		padding: 10px 3px;
 		background: #FFF;
-		width: 110px;
+		width: 125px;
 		height: 130px;
 		position: relative;
 
@@ -169,6 +171,7 @@ header {
 
 	.detail {
 		margin-left: 15px;
+		width: 150px;
 
 		small {
 			color: #888;
