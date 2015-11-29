@@ -151,6 +151,18 @@ header {
 	border-radius: 4px 4px 0 0;
 }
 
+.mayor-talk {
+	background: #FFF;
+	border-radius: 4px;
+}
+
+.mayor {
+	padding: 20px 10px 10px 50px;
+	background: url('../../assets/images/quote.png');
+	background-position: 0 15px;
+	background-repeat: no-repeat;
+}
+
 
 .activity-news ul {
 
@@ -159,6 +171,7 @@ header {
 		background: #FFF;
 		height: auto;
 		padding: 10px;
+		border-radius: 4px;
 
 		&:hover {
 			cursor: pointer;
