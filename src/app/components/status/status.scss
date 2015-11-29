@@ -1,6 +1,10 @@
 .status {
 	color: white;
-	text-align: center;
+	text-align: left;
+}
+
+.status small {
+	margin-bottom: 10px;
 }
 
 .status h3 {
@@ -15,4 +19,5 @@
 
 .detail-status {
 	text-align: left;
+	margin-left: 0;
 }
