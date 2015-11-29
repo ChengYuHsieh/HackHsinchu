@@ -98,7 +98,7 @@
           $("#"+vm.actionID.toString()).addClass('active');
         }else if(code === 38){
           vm.actionID = mod(vm.actionID-1, vm.actionFiltered.length);
-          var pre = mod(vm.actionID-1, vm.actionFiltered.length);
+          var pre = mod(vm.actionID+1, vm.actionFiltered.length);
           $("#"+vm.actionID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
         }else if(code === 13){
@@ -114,7 +114,7 @@
           $("#"+pre.toString()).removeClass('active');
           $("#"+vm.argID.toString()).addClass('active');
         }else if(code === 38){
-          vm.argID = mod(vm.argID-1, vm.argFiltered.length);
+          vm.argID = mod(vm.argID+1, vm.argFiltered.length);
           var pre = mod(vm.argID-1, vm.argFiltered.length);
           $("#"+vm.argID.toString()).addClass('active');
           $("#"+pre.toString()).removeClass('active');
@@ -127,7 +127,13 @@
       if(vm.config.length === 2 && code === 13){
         if(vm.config[0]===':go'){
           var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
-          window.location = result[0].url;
+          window.open(result[0].url, '_blank');
+          vm.input = '';
+        }else if(vm.config[0]===':call'){
+          var result = $.grep(vm.agencies, function(e){ return e.name === vm.config[1]; });
+          var phone = result[0].number;
+          var href = "tel:"+phone.toString();
+          $('#openSS-btn').replaceWith("<a href="+href+" class='btn btn-default' type='button'>Call</a>")
         }
 
       }
