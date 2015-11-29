@@ -53,3 +53,39 @@
 		border-color: $blue;
   }
 }
+
+.egg {
+	position: absolute;
+	z-index: 80000;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	height: 350px;
+
+	.head {
+		width: 180px;
+		position: absolute;
+		left: 0;
+		z-index: 2;
+		transform-origin: center bottom;
+		-webkit-animation: spin 1s infinite linear;
+	}
+
+	.body {
+		width: 80px;
+		position: absolute;
+		bottom: 5px;
+		left: 40px;
+		transform-origin: center top;
+		-webkit-animation: spin 1s infinite linear;
+	}
+}
+
+@-webkit-keyframes spin {
+    0%   { transform: rotate(-10deg) }
+    50% { transform: rotate(10deg) }
+    100%   { transform: rotate(-10deg) }
+}
+
+
+
