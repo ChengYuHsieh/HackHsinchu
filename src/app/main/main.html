@@ -6,6 +6,13 @@
     <div class="row">
       <div class="search-content col-sm-4 col-sm-offset-2">
         <open-s-s></open-s-s>
+        <div class="hottopic">
+          <h5 style="display:inline;"><b translate="HOTTOPIC.title">hot topic</b> : </h5>
+          <span class="label label-default" translate="HOTTOPIC.bus"></span>
+          <span class="label label-default" translate="HOTTOPIC.entre"></span>
+          <span class="label label-default" translate="HOTTOPIC.welfare"></span>
+          <span class="label label-default" translate="HOTTOPIC.legal">legal consultant</span>
+        </div>
         <!--<search></search>-->
       </div>
       <div class="search-content col-sm-4 hidden-xs">
@@ -14,7 +21,7 @@
     </div>
   </div>
   <div class="background">
-    <img src="assets/images/house.jpg" width="100%"/>
+    <img src="assets/images/background.png" width="100%"/>
   </div>
 </header><!-- /header -->
 <div class="container">
@@ -93,7 +100,7 @@
       <h3 class="title-text" translate="ACTIVITY_NEWS">News</h3>
       <ul ng-repeat="activity in vm.activities" class="content">
         <li>
-          <img src="{{ activity.image }}" class="pull-left"/> 
+          <img ngSrc="{{ activity.image }}" class="pull-left"/> 
           <div class="detail pull-left">
             <h5>{{ activity.name }}</h5>
             <small>{{ activity.date }}</small>

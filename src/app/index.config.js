@@ -20,8 +20,18 @@
     //translator
     $translateProvider.translations('en', {
       TITLE: 'Hello',
-      SEARCH_BUTTON: 'Search',
+      SEARCH:{
+        button: 'Search',
+        hint: 'What do you want to know?'
+      },
       SERVICE_TITLE: 'What can we help you ?',
+      HOTTOPIC: {
+        title: 'Hot Topic',
+        bus: 'Bus',
+        entre: 'Entrepreneurship',
+        welfare: 'Welfare',
+        legal: 'Legal Consultant'
+      },
       CATE1: {
         name: 'Urban Planning',
         small: '低收入戶福利措施, 老人福利措施'

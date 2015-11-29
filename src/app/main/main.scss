@@ -19,11 +19,6 @@ header {
 	z-index: -1;
 	overflow: hidden;
 
-	& img {
-		margin-top: -80px;
-		opacity: 0.85;
-		filter: saturate(1.0) blur(2.5px);
-	}
 }
 
 .title {
@@ -37,6 +32,11 @@ header {
 		margin: 0 10px;
 		height: 40px;
 	}
+}
+
+.hottopic {
+	margin: 15px 5px;
+	text-align: left;
 }
 
 .cate-block, .gov-news, .activity-news {

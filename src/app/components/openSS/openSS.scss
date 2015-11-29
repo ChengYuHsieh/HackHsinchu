@@ -1,12 +1,44 @@
-.openSS-hint{
-  background-color: gray;
-  
+.openss {
+	input.form-control {
+		border-radius: 0;
+	}
+
+	.input-group-btn > button.btn {
+		border-radius: 0;
+	}
 }
 
-.active{
-  background-color: yellow;
+.hint-block > div:last-child {
+	border-radius: 0 0 4px 4px;
 }
 
-.openSS-cmt{
+.btn-default {
+	background: $blue;
+
+	&:hover {
+		background: darken($blue, 7);
+	}
+}
+
+.openSS-hint {
+  background-color: #FFF;
+  text-align: left;
+  padding: 5px 20px;
+  border-bottom: 1px solid #BBB;
+}
+
+.active {
+  background-color: $blue;
+}
+
+.openSS-cmt {
   color: red;
+}
+
+.btn-default {
+  border-color: $blue;
+
+  &:hover {
+		border-color: $blue;
+  }
 }
