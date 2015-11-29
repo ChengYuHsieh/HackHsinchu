@@ -20,76 +20,151 @@
     //translator
     $translateProvider.translations('en', {
       TITLE: 'Hello',
+      MENU1: 'News',
+      MENU2: 'Resources',
+      MENU3: 'City Government',
+      MENU4: 'Events',
+      MENU5: 'Connect',
       SEARCH:{
         button: 'Search',
-        hint: 'What do you want to know?'
+        hint: 'What do you want to know ?'
       },
-      SERVICE_TITLE: 'What can we help you ?',
+      SERVICE_TITLE: 'How can we help you ?',
       HOTTOPIC: {
-        title: 'Hot Topic',
+        title: 'Hot keywords',
         bus: 'Bus',
         entre: 'Entrepreneurship',
-        welfare: 'Welfare',
-        legal: 'Legal Consultant'
+        welfare: 'Subsidy',
+        legal: 'Paper Loss'
       },
       CATE1: {
-        name: 'Urban Planning',
-        small: '低收入戶福利措施, 老人福利措施'
+        name: 'Urban Development',
+        small: 'Public Housing, Youth Loans'
       },
       CATE2: {
-        name: 'Enviroment',
-        small: '公害專線, 病媒防治'
+        name: 'Environment Protection',
+        small: 'Disease Vector Control, Noise'
       },
       CATE3: {
-        name: 'Wellfare',
-        small: '低收入戶福利措施, 老人福利措施'
+        name: 'Society',
+        small: 'Pregnancy Subsidies, Child Welfare'
       },
       CATE4: {
         name: 'Education',
-        small: '國小、學齡前教育, 身心障礙童教育'
+        small: 'Public Kindergarten Enrollment'
       },
       CATE5: {
-        name: 'Traffic',
-        small: '停車場業務, 施工車輛臨時佔用道路申請'
+        name: 'Transportation',
+        small: 'Parking Lot Affairs'
       },
       CATE6: {
-        name: 'Civic Service',
-        small: '宗教服務, 戶政業務-婦女生育津貼'
+        name: 'Civil Affairs',
+        small: 'Legal Services to Citizens'
       },
       CATE7: {
-        name: 'Land Service',
-        small: '不動產糾紛調處, 耕地租佃爭議調處'
+        name: 'Land Administration',
+        small: 'Real Estate Arguments'
       },
       CATE8: {
         name: 'Policing',
-        small: '違規車輛拖吊查詢, 計程車駕駛人執業登記證'
+        small: 'Lost Passport, Towing of Vehicles'
       },
       CATE9: {
-        name: 'Labor',
-        small: '服務項目及電話, 工會組織及勞資關係服務'
+        name: 'Labor Services',
+        small: 'Labor welfare, Employment'
       },
       NEWS: 'News',
-      ACTIVITY_NEWS: 'Activity',
-      MAYOR: 'Mayor',
-      DISCUSS: 'Discuss',
+      ACTIVITY_NEWS: 'Events',
+      MAYOR: 'Mayor says',
+      DISCUSS: 'Citizens are talking about ..',
       FOOTER: {
         aboutus: 'About Us',
         jobs: 'Jobs',
-        sitemap: 'Sitemap',
-        agency: 'Agency Site',
-        onenine: '1999 hotline',
-        data: 'open data'
+        sitemap: 'Site map',
+        agency: 'Directory of City Agencies',
+        onenine: '1999 Hotline',
+        data: 'Open data'
       },
       SUBSCRIBE: {
-        title: 'Go Subscribe! Never miss it',
+        title: 'Stay updated',
         keyword: 'Enter the keyword you want to subscribe',
-        mail: 'Enter you email. We\'ll send you latest news',
+        mail: 'Enter your email. We\'ll send you the latest subscription',
         send_btn: 'Send'
       } 
     });
     $translateProvider.translations('zh', {
-      TITLE: 'Hallo',
-      SEARCH_BUTTON: '搜尋'
+      TITLE: 'Hello',
+      MENU1: '即時消息',
+      MENU2: '市民資源',
+      MENU3: '市府介紹',
+      MENU4: '活動訊息',
+      MENU5: '和政府連結',
+      SEARCH:{
+        button: '搜尋',
+        hint: '你想知道什麼與新竹市相關的資訊呢？'
+      },
+      SERVICE_TITLE: '你需要哪方面的服務或協助呢？',
+      HOTTOPIC: {
+        title: '熱門關鍵字',
+        bus: '復康巴士',
+        entre: '創業計畫',
+        welfare: '老人津貼',
+        legal: '證件遺失'
+      },
+      CATE1: {
+        name: '都市發展服務',
+        small: '綜合規劃、眷村更新'
+      },
+      CATE2: {
+        name: '環境保護服務',
+        small: '噪音、病媒防治'
+      },
+      CATE3: {
+        name: '社會福利服務',
+        small: '低收入戶、身心障礙'
+      },
+      CATE4: {
+        name: '教育服務',
+        small: '學齡前教育'
+      },
+      CATE5: {
+        name: '交通服務',
+        small: '停車場、施工道路'
+      },
+      CATE6: {
+        name: '民政服務',
+        small: '客家服務、徵兵業務'
+      },
+      CATE7: {
+        name: '地政服務',
+        small: '不動產糾紛、耕地'
+      },
+      CATE8: {
+        name: '警政服務',
+        small: '違規拖吊、證件遺失'
+      },
+      CATE9: {
+        name: '勞工服務',
+        small: '職業安全、就業服務'
+      },
+      NEWS: '市府新聞',
+      ACTIVITY_NEWS: '活動資訊',
+      MAYOR: '市長想說',
+      DISCUSS: '市民正在討論',
+      FOOTER: {
+        aboutus: '關於我們',
+        jobs: '徵才公告',
+        sitemap: '網站地圖',
+        agency: '機關網站',
+        onenine: '1999 服務專線',
+        data: '開源資料'
+      },
+      SUBSCRIBE: {
+        title: '使用訂閱，不錯過重要消息 !',
+        keyword: '輸入你想訂閱的關鍵字，例如兵役、創業',
+        mail: '輸入你的電子信箱，我們會將最新消息發送給你',
+        send_btn: '送出'
+      } 
     });
     $translateProvider.preferredLanguage('en');
   }
