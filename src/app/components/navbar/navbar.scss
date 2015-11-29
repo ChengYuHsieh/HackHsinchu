@@ -7,6 +7,10 @@
 	background-color: transparent;
 }
 
+.nav > li > a {
+	padding: 10px 5px;
+}
+
 .nav li {
 	display: inline-block;
 	float: none;
@@ -18,6 +22,9 @@
 	}
 
 	a:hover {
-		color: darken($blue, 7);
+		border-bottom: 2px solid darken($blue, 10);
+		margin-bottom: -2px;
+		color: darken($blue, 15);
+		transition: all 0.2s ease-in-out; 
 	}
 }
