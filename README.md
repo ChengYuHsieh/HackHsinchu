@@ -2,7 +2,7 @@
 > Hsinchu City official website Redesign
 
 ### Getting started
----
+#
 #### Install
 ##### Install required tools `gulp` and `bower`:
 ```
@@ -29,15 +29,6 @@ npm install && bower install
 
 
 ### Live demo
----
+#
 [HackHsinchu](https://github.com/Swiip/generator-gulp-angular/releases) by HCH
-
-
-
-
-
-
-```
-```
-```
-```
+####
