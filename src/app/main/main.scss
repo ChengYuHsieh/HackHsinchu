@@ -50,6 +50,7 @@ header {
 	font-size: 12px;
 	text-align: center;
 	margin: 10px 5px;
+	padding: 0 15px;
 
 	li {
 		border-radius: 4px;
@@ -59,7 +60,7 @@ header {
 		margin: 5px 6px;
 		padding: 10px 3px;
 		background: #FFF;
-		width: 100px;
+		width: 110px;
 		height: 130px;
 		position: relative;
 
@@ -81,6 +82,11 @@ header {
 			bottom: 10px;
 			left: 3px;
 			right: 3px;
+		}
+
+		h4 {
+			font-size: 14px;
+			font-weight: 180%;
 		}
 	}
 }
