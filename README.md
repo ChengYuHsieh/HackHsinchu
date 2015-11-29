@@ -30,5 +30,5 @@ npm install && bower install
 
 ### Live demo
 #
-[HackHsinchu](https://github.com/Swiip/generator-gulp-angular/releases) by HCH
+[HackHsinchu](https://hackhsinchu.mybluemix.net) by HCH
 ####
